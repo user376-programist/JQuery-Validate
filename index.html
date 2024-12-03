@@ -5,63 +5,28 @@
         <meta name="viewport" content="width-device-width, initial-scale-1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="style.css" rel="stylesheet">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="S:\jquery-validation-1.21.0\dist\jquery.validate.js"></script>
     </head>
     <body>
         <div class="center">
             <form id="form" method="get" action="index.html">
-                <label id="UsernameAdvice" for="LUsername">Nazwa musi się składać z co najmniej 4 znaków</label>
                 <p class="formBackground">
-                    <label for="Username" id="LUsername">Username</label>
+                    <label for="Username">Username</label>
                     <input id="Username" type="text" minlength="4" required>
                 </p>
-                <label id="EmailAdvice" for="Lemail">Adres email musi zwierać znak @ i domenę</label>
                 <p class="formBackground">
-                    <label id="Lemail" for="email">Email</label>
+                    <label id="Lemail">Email</label>
                     <input id="email" type="email" minlength="7" required>
                 </p>
-                <label id="PasswordAdvice" for="Lpassword">Hasło powinno składać się z conajmniej 8 znaków</label>
                 <p class="formBackground">
-                    <label id="Lpassword" for="password">Password</label>
+                    <label id="Lpassword">Password</label>
                     <input id="password" type="password" minlength="8" required>
                 </p>
                 <p class="formBackground">
                     <input type="submit">
                 </p>
             </form>
-            <script>
-                $("#LUsername").mouseover(function(){
-                    $("#UsernameAdvice").css("display", "block");
-                    $(".formBackground").css("opacity", "0.5");
-                })
-    
-                $("#LUsername").mouseleave(function(){
-                    $("#UsernameAdvice").css("display", "none");
-                    $(".formBackground").css("opacity", "1");
-                })
-    
-                $("#Lemail").mouseover(function(){
-                    $("#EmailAdvice").css("display", "block");
-                    $(".formBackground").css("opacity", "0.5");
-                })
-    
-                $("#Lemail").mouseleave(function(){
-                    $("#EmailAdvice").css("display", "none");
-                    $(".formBackground").css("opacity", "1");
-                })
-
-                $("#Lpassword").mouseover(function(){
-                    $("#PasswordAdvice").css("display", "block");
-                    $(".formBackground").css("opacity", "0.5");
-                })
-    
-                $("#Lpassword").mouseleave(function(){
-                    $("#PasswordAdvice").css("display", "none");
-                    $(".formBackground").css("opacity", "1");
-                })
-            </script>
         </div>
     </body>
 </html>
