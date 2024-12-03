@@ -11,31 +11,46 @@
     <body>
         <div class="container-fluid d-flex flex-row justify-content-center mt-3">
             <form id="form" method="get" action="index.html">
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Imię musi mieć minimum 3 litery" data-bs-placement="bottom">
+                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Imię musi mieć minimum 3 litery" data-bs-placement="right">
                     <label for="Name" class="me-2">Name</label>
                     <input id="Name" type="text" minlength="3" required class="flex-end">
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Nazwisko musi mieć minimum 3 litery" data-bs-placement="bottom">
+                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Nazwisko musi mieć minimum 3 litery" data-bs-placement="right">
                     <label for="Surname" class="me-2">Surname</label>
                     <input id="Surname" type="text" minlength="3" required>
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Adres email musi mieć minimum 7 znaków, zawierać znak @ i domenę" data-bs-placement="bottom">
+                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Adres email musi mieć minimum 7 znaków, zawierać znak @ i domenę" data-bs-placement="right">
                     <label for="Email" class="me-2">Email</label>
                     <input id="Email" type="email" minlength="7" required>
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Hasło musi składać się z minimum 8 znaków" data-bs-placement="bottom">
+                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Hasło musi składać się z minimum 8 znaków" data-bs-placement="right">
                     <label for="Password" class="me-2">Password</label>
-                    <input id="Password" type="password" minlength="8" required>
+                    <input name="EnterPassword" id="Password" type="password" minlength="8" required>
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Wpisz podane hasło jeszcze raz" data-bs-placement="bottom">
+                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Wpisz podane hasło jeszcze raz" data-bs-placement="right">
                     <label for="Rpassword" class="me-2">Repeat password</label>
-                    <input id="Rpassword" type="password" minlength="8" required>
+                    <input name="ConfirmPassword" id="Rpassword" type="password" minlength="8" required equalTo="#Password">
                 </p>
                 <p class="d-flex flex-row justify-content-end">
                     <input type="submit">
                 </p>
             </form>
         </div>
+        <!--<script>
+            $("#form").validate({
+                rules: {
+                    EnterPassword: "required",
+                    ConfirmPassword: {
+                        equalTo: '#Password'
+                    }
+                },
+                messages: {
+                    ConfirmPassword: {
+                        equalTo: 'Passwords are not the same'
+                    }
+                }
+            });
+        </script>-->
         <script>
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl){
