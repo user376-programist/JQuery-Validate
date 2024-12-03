@@ -1,0 +1,46 @@
+label {
+    margin-bottom: 4px;
+    background-color: white;
+    color: black;
+    opacity: 1;
+}
+
+input {
+    margin-bottom: 4px;
+    float: inline-end;
+}
+
+form {
+    min-width: 250px;
+    max-width: 20%;
+    float: right;
+}
+
+#UsernameAdvice {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    border: 2px, solid, lightgray;
+}
+
+#EmailAdvice {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    border: 2px, solid, lightgray;
+}
+
+.center {
+    max-width: 60%;
+    align-content: center;
+}
+
+#PasswordAdvice {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    border: 2px, solid, lightgray;
+}
