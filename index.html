@@ -8,49 +8,86 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="S:\jquery-validation-1.21.0\dist\jquery.validate.js"></script>
     </head>
+    <style>
+        .error {
+            color: red;
+            font-size: smaller;
+        }
+    </style>
     <body>
         <div class="container-fluid d-flex flex-row justify-content-center mt-3">
             <form id="form" method="get" action="index.html">
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Imię musi mieć minimum 3 litery" data-bs-placement="right">
-                    <label for="Name" class="me-2">Name</label>
-                    <input id="Name" type="text" minlength="3" required class="flex-end">
+                <p class="d-flex flex-column justify-content-end" data-bs-toggle="tooltip" title="Imię musi mieć minimum 3 litery" data-bs-placement="right">
+                    <label for="Name" class="me-2">Imię</label>
+                    <input name="Name" id="Name" type="text">
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Nazwisko musi mieć minimum 3 litery" data-bs-placement="right">
-                    <label for="Surname" class="me-2">Surname</label>
-                    <input id="Surname" type="text" minlength="3" required>
+                <p class="d-flex flex-column justify-content-end" data-bs-toggle="tooltip" title="Nazwisko musi mieć minimum 3 litery" data-bs-placement="right">
+                    <label for="Surname" class="me-2">Nazwisko</label>
+                    <input name="Surname" id="Surname" type="text">
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Adres email musi mieć minimum 7 znaków, zawierać znak @ i domenę" data-bs-placement="right">
+                <p class="d-flex flex-column justify-content-end" data-bs-toggle="tooltip" title="Adres email musi zawierać znak @ i domenę" data-bs-placement="right">
                     <label for="Email" class="me-2">Email</label>
-                    <input id="Email" type="email" minlength="7" required>
+                    <input name="Email" id="Email" type="email">
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Hasło musi składać się z minimum 8 znaków" data-bs-placement="right">
-                    <label for="Password" class="me-2">Password</label>
-                    <input name="EnterPassword" id="Password" type="password" minlength="8" required>
+                <p class="d-flex flex-column justify-content-end" data-bs-toggle="tooltip" title="Hasło musi składać się z minimum 8 znaków" data-bs-placement="right">
+                    <label for="Password" class="me-2">Hasło</label>
+                    <input name="EnterPassword" id="Password" type="text">
                 </p>
-                <p class="d-flex flex-row justify-content-end" data-bs-toggle="tooltip" title="Wpisz podane hasło jeszcze raz" data-bs-placement="right">
-                    <label for="Rpassword" class="me-2">Repeat password</label>
-                    <input name="ConfirmPassword" id="Rpassword" type="password" minlength="8" required equalTo="#Password">
+                <p class="d-flex flex-column justify-content-end" data-bs-toggle="tooltip" title="Wpisz podane hasło jeszcze raz" data-bs-placement="right">
+                    <label for="Rpassword" class="me-2">Powtórz hasło</label>
+                    <input name="ConfirmPassword" id="Rpassword" type="text">
                 </p>
                 <p class="d-flex flex-row justify-content-end">
                     <input type="submit">
                 </p>
             </form>
         </div>
-        <!--<script>
+        <script>
             $("#form").validate({
                 rules: {
-                    EnterPassword: "required",
+                    Name: {
+                        required: true,
+                        minlength: 3
+                    },
+                    Surname: {
+                        required: true,
+                        minlength: 3
+                    },
+                    Email: {
+                        required: true,
+                        email: true,
+                    },
+                    EnterPassword: {
+                        required: true,
+                        minlength: 8,
+                    },
                     ConfirmPassword: {
                         equalTo: '#Password'
                     }
                 },
                 messages: {
+                    Name: {
+                        required: 'Wprowadź imię',
+                        minlength: 'Imię musi składać się z minimum 3 liter'
+                    },
+                    Surname: {
+                        required: 'Wprowadź nazwisko',
+                        minlength: 'Imię musi składać się z minimum 3 liter'
+                    },
+                    Email: {
+                        required: 'Wprowadź adres email',
+                        email: 'Wprowadź prawidłowy adres email'
+                    },
+                    EnterPassword: {
+                        required: 'Wprowadź hasło',
+                        minlength: 'Hasło musi mieć minimum 8 znaków',
+                    },
                     ConfirmPassword: {
-                        equalTo: 'Passwords are not the same'
+                        equalTo: 'Hasła nie są takie same'
                     }
                 }
             });
-        </script>-->
+        </script>
         <script>
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl){
